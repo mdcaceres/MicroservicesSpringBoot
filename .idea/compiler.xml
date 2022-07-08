@@ -9,9 +9,11 @@
         <module name="EurekaServer" />
         <module name="Item" />
         <module name="Productos" />
+        <module name="ApiGateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ApiGateway" target="18" />
       <module name="EurekaServer" target="18" />
       <module name="Item" target="18" />
       <module name="Productos" target="18" />
@@ -19,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApiGateway" options="-parameters" />
       <module name="EurekaServer" options="-parameters" />
       <module name="Item" options="-parameters" />
       <module name="Productos" options="-parameters" />

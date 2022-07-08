@@ -25,12 +25,6 @@ public class ApiGatewayApplication implements CommandLineRunner {
 		SpringApplication.run(ApiGatewayApplication.class, args);
 	}
 
-	@Bean
-	@LoadBalanced
-	public WebClient.Builder loadBalancedWebClientBuilder() {
-		return WebClient.builder();
-	}
-
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("LIST INSTANCES");
