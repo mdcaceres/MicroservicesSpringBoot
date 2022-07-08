@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EurekaServer/EurekaServer.iml" filepath="$PROJECT_DIR$/EurekaServer/EurekaServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Item/Item.iml" filepath="$PROJECT_DIR$/Item/Item.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MicroserviciosSpringBoot.iml" filepath="$PROJECT_DIR$/.idea/MicroserviciosSpringBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Productos/Productos.iml" filepath="$PROJECT_DIR$/Productos/Productos.iml" />
     </modules>
   </component>
 </project>
