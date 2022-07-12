@@ -8,6 +8,8 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -16,6 +18,11 @@ public class EjGatewayFilterFactory extends AbstractGatewayFilterFactory<FilterC
 
     public EjGatewayFilterFactory(){
         super(FilterConfig.class);
+    }
+
+    @Override
+    public List<String> shortcutFieldOrder() {
+        return Arrays.asList("mensaje", "cookieNombre", "cookieValor");
     }
 
     @Override
@@ -29,8 +36,6 @@ public class EjGatewayFilterFactory extends AbstractGatewayFilterFactory<FilterC
                 });
                 logger.info("ejecutando post abstract filter factory: " + config.getMensaje());
             }));
-
-
         };
     }
 }

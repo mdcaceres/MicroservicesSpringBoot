@@ -8,6 +8,17 @@ spring:
             - Path=/api/productos/**
           filters:
             - StripPrefix=2
+            #1era forma de pasar Filtro
+            #- name: Ej
+              #args:
+                #mensaje: hola mi mensaje personalizado
+                #cookieNombre: user
+                #cookieValor: miguelcaceres
+            - Ej=hola mi mensaje personalizado,user,migueldcaceres
+            - AddRequestHeader=token-request,123456
+            - AddResponseHeader=token-response,1234567890
+            - AddRequestParameter=nombre, miguel
+
         - id: servicio-items
           uri: lb://servicio-items
           predicates:
