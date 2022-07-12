@@ -15,9 +15,6 @@ spring:
                 #cookieNombre: user
                 #cookieValor: miguelcaceres
             - Ej=hola mi mensaje personalizado,user,migueldcaceres
-            - AddRequestHeader=token-request,123456
-            - AddResponseHeader=token-response,1234567890
-            - AddRequestParameter=nombre, miguel
 
         - id: servicio-items
           uri: lb://servicio-items
@@ -25,3 +22,6 @@ spring:
             - Path=/api/items/**
           filters:
             - StripPrefix=2
+            - AddRequestHeader=token-request,123456
+            - AddResponseHeader=token-response,1234567890
+            - AddRequestParameter=nombre, miguel

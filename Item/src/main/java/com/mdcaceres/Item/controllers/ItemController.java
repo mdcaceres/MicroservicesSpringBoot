@@ -6,9 +6,7 @@ import com.mdcaceres.Item.models.Producto;
 import com.mdcaceres.Item.models.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +18,9 @@ public class ItemController {
     private ItemService itemService;
 
     @GetMapping("/listar")
-    public List<Item> listar(){
+    public List<Item> listar(@RequestParam(name = "nombre", required = false) String nombre,
+                             @RequestHeader(name="token-request", required = false) String token){
+        System.out.printf("nombre: %s, token: %s%n",nombre,token);
         return itemService.findAll();
     }
 
