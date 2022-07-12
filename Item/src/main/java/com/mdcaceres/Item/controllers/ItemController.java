@@ -44,7 +44,7 @@ public class ItemController {
         Producto prod = new Producto();
         it.setCantidad(cantidad);
         prod.setNombre("circuit breaker!!!");
-        prod.setPrecio(500.00);
+        prod.setPrecio(000.00);
         it.setProducto(prod);
         return it;
     }
