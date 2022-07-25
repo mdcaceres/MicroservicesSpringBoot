@@ -29,7 +29,9 @@ public class AppConfig {
                             .failureRateThreshold(50)
                             .waitDurationInOpenState(Duration.ofSeconds(10L))
                             .build())
-                    .timeLimiterConfig(TimeLimiterConfig.ofDefaults())
+                    .timeLimiterConfig(TimeLimiterConfig.custom()
+                            .timeoutDuration(Duration.ofSeconds(2L))
+                            .build())
                     .build();
         });
     }
