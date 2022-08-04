@@ -1,7 +1,7 @@
 package com.mdcaceres.productos.models.service;
 
 import com.mdcaceres.productos.models.dao.ProductoDao;
-import com.mdcaceres.productos.models.entity.Producto;
+import com.mdcaceres.commons.models.entity.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

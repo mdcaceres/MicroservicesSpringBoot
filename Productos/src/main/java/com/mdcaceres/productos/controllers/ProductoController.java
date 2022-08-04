@@ -1,6 +1,6 @@
 package com.mdcaceres.productos.controllers;
 
-import com.mdcaceres.productos.models.entity.Producto;
+import com.mdcaceres.commons.models.entity.Producto;
 import com.mdcaceres.productos.models.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

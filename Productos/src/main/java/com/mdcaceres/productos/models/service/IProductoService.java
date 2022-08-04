@@ -1,6 +1,6 @@
 package com.mdcaceres.productos.models.service;
 
-import com.mdcaceres.productos.models.entity.Producto;
+import com.mdcaceres.commons.models.entity.Producto;
 
 import java.util.List;
 
