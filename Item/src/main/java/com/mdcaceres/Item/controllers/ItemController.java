@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.http.HttpResponse;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,10 +38,6 @@ public class ItemController {
     @Qualifier("serviceRestTemplate")
     private ItemService itemService;
 
-    //@Value("${configuracion.texto}")
-    //private String texto;
-
-
     @GetMapping("/listar")
     public List<Item> listar(@RequestParam(name = "nombre", required = false) String nombre,
                              @RequestHeader(name="token-request", required = false) String token){
@@ -55,16 +52,34 @@ public class ItemController {
     }
 
     @GetMapping("/obtener-config")
-    public ResponseEntity<Map<String,String>> obtenerConfig(@Value("${server.port}") String puerto,@Value("${configuracion.texto}") String texto){
-        log.info("puerto de items es " + texto);
+    public ResponseEntity<Map<String,String>> obtenerConfig(@Value("${server.port}") String puerto){
+        //log.info("puerto de items es " + texto);
         Map<String,String> json = new HashMap<>();
-        json.put("texto", texto);
+        //json.put("texto", texto);
         json.put("puerto", puerto);
         if(env.getActiveProfiles().length > 0 && env.getActiveProfiles()[0].equals("dev")){
             json.put("autor", env.getProperty("configaracion.autor.nombre"));
             json.put("email", env.getProperty("configaracion.autor.email"));
         }
         return new ResponseEntity<>(json, HttpStatus.OK);
+    }
+
+    @PostMapping("/crear")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Producto crear(@RequestBody Producto producto){
+        return itemService.save(producto);
+    }
+
+    @PutMapping("/editar/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Producto editar(@RequestBody Producto producto, @PathVariable Long id){
+        return itemService.update(producto,id);
+    }
+
+    @DeleteMapping("eliminar/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void eliminar(@PathVariable Long id){
+        itemService.delete(id);
     }
 
     public Item metodoAlternativo(Long id, Integer cantidad, Throwable e){

@@ -5,9 +5,9 @@ import com.mdcaceres.productos.models.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -53,4 +53,26 @@ public class ProductoController {
 //        }
         return producto;
     }
+
+    @PostMapping("/crear")
+    public ResponseEntity<Producto> crear(@RequestBody Producto producto){
+        return ResponseEntity.ok(productoService.save(producto));
+    }
+
+    @PutMapping("/editar/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Producto editar(@RequestBody Producto producto, @PathVariable Long id) {
+        Producto p = productoService.findById(id);
+        p.setNombre(producto.getNombre());
+        p.setPrecio(producto.getPrecio());
+        p.setCreateAt(producto.getCreateAt());
+        return productoService.save(p);
+    }
+
+    @DeleteMapping("/eliminar/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void eliminar(@PathVariable Long id){
+        productoService.deleteById(id);
+    }
+
 }
