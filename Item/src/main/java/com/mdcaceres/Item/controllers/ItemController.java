@@ -2,7 +2,7 @@ package com.mdcaceres.Item.controllers;
 
 
 import com.mdcaceres.Item.models.Item;
-import com.mdcaceres.Item.models.Producto;
+import com.mdcaceres.commons.models.entity.Producto;
 import com.mdcaceres.Item.models.service.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,8 +15,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.net.http.HttpResponse;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

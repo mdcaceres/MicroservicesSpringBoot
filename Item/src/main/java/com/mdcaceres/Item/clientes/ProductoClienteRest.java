@@ -1,10 +1,11 @@
 package com.mdcaceres.Item.clientes;
 
 
-import com.mdcaceres.Item.models.Producto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import com.mdcaceres.commons.models.entity.Producto;
+
 
 import java.util.List;
 

@@ -1,8 +1,7 @@
 package com.mdcaceres.Item.models.service;
 
 import com.mdcaceres.Item.models.Item;
-import com.mdcaceres.Item.models.Producto;
-
+import com.mdcaceres.commons.models.entity.Producto;
 import java.util.List;
 
 public interface ItemService {

@@ -2,10 +2,9 @@ package com.mdcaceres.Item.models.service;
 
 import com.mdcaceres.Item.clientes.ProductoClienteRest;
 import com.mdcaceres.Item.models.Item;
-import com.mdcaceres.Item.models.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+import com.mdcaceres.commons.models.entity.Producto;
 
 import java.util.List;
 import java.util.stream.Collectors;

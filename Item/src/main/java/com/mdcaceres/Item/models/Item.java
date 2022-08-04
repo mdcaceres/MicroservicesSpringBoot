@@ -1,5 +1,7 @@
 package com.mdcaceres.Item.models;
 
+import com.mdcaceres.commons.models.entity.Producto;
+
 public class Item {
     private Producto producto;
     private Integer cantidad;
