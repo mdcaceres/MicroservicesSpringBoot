@@ -11,10 +11,12 @@
         <module name="Productos" />
         <module name="ConfigServer" />
         <module name="ApiGateway" />
+        <module name="Commons" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ApiGateway" target="18" />
+      <module name="Commons" target="17" />
       <module name="ConfigServer" target="18" />
       <module name="EurekaServer" target="18" />
       <module name="Item" target="18" />
@@ -24,6 +26,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ApiGateway" options="-parameters" />
+      <module name="Commons" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
       <module name="EurekaServer" options="-parameters" />
       <module name="Item" options="-parameters" />
