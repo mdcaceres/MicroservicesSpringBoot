@@ -9,6 +9,8 @@
       <module fileurl="file://$PROJECT_DIR$/Item/Item.iml" filepath="$PROJECT_DIR$/Item/Item.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MicroserviciosSpringBoot.iml" filepath="$PROJECT_DIR$/.idea/MicroserviciosSpringBoot.iml" />
       <module fileurl="file://$PROJECT_DIR$/Productos/Productos.iml" filepath="$PROJECT_DIR$/Productos/Productos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Usuario/Usuario.iml" filepath="$PROJECT_DIR$/Usuario/Usuario.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UsuarioCommons/UsuarioCommons.iml" filepath="$PROJECT_DIR$/UsuarioCommons/UsuarioCommons.iml" />
     </modules>
   </component>
 </project>

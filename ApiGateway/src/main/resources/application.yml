@@ -26,14 +26,12 @@ spring:
           uri: lb://servicio-productos
           predicates:
             - Path=/api/productos/**
-
           filters:
             - name: CircuitBreaker
               args:
                 name: productos
                 statusCodes: 500
                 fallbackUri: forward:/api/items/ver/9/cantidad/5
-
             - Ej=hola mi mensaje personalizado,user,migueldcaceres
             - StripPrefix=2
             #1era forma de pasar Filtro
@@ -51,3 +49,10 @@ spring:
             - AddRequestHeader=token-request,123456
             - AddResponseHeader=token-response,1234567890
             - AddRequestParameter=nombre, miguel
+
+        - id: servicio-usuarios
+          uri: lb://servicio-usuarios
+          predicates:
+            - Path=/api/usuarios/**
+          filters:
+            - StripPrefix=2
